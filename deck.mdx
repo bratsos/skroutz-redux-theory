@@ -1,0 +1,81 @@
+import { Appear } from 'mdx-deck'
+import { Split } from 'mdx-deck/layouts'
+import Code from 'mdx-code';
+import { CodeSurfer } from "mdx-deck-code-surfer"
+
+import * as Layouts from './layouts'
+export { default as theme } from './theme'
+
+export default Layouts.FirstSlide
+
+# Redux intro
+<Appear>
+  <p>(some theory)</p>
+</Appear>
+
+---
+
+## Why do we need state management tools?
+🤔
+---
+
+## Because it kind of makes sense?
+<Appear>
+
+<img src="./captain-obvious.png" id="first" />
+but srsly, why?
+</Appear>
+---
+
+# History Time! 🏛
+
+---
+
+Back in 2006...
+
+<Appear>
+  <div><h2>Websites</h2></div>
+  <div>Static server side rendered desktop-first web applications™</div>
+</Appear>
+
+---
+
+### A website
+<Layouts.WebsiteWrapper />
+
+---
+
+## Does.not.scale 😅
+---
+## Enter Redux
+
+<Appear>
+  <p>Central state management - only 1 store</p>
+  <p>Describe every action in a Javascript Object</p>
+  <p>State = (oldState, action) => newState</p>
+</Appear>
+
+---
+
+<Layouts.WebsiteWrapperRedux />
+
+---
+
+<CodeSurfer
+  title="Redux example code"
+  code={require("!raw-loader!./reduxExample.mdx")}
+  steps={[
+    { notes: ""},
+    { lines: [3, 4], notes: "actionCreators return an object" },
+    { ranges: [[9,24]]},
+    { ranges: [[11,22]], notes: "reducer matches action.type and returns a *new* state" },
+    { ranges: [[26, 49]], notes: "in our react component..."},
+    { lines: [27], notes: "we 're importing our action creators"},
+    { lines: [28], notes: "and a helper method to bind our component with redux"},
+    { ranges: [[40, 42]], notes: "we 're subscribing to a specific part of our whole state"},
+    { ranges: [[44, 46]], notes: "an we 're binding some actions to our component"},
+    { ranges: [[34, 35]], notes: "each time we click a button, we 're triggering a redux action"},
+    { ranges: [[30, 38]], notes: "when redux updates the store, our component will re-render, since we're getting `sum` as a prop"},
+    { lines: [33], notes: "and `this.props.sum` will be our new value"}
+  ]}
+/>

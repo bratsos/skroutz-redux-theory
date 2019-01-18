@@ -1,0 +1,49 @@
+// actions
+
+const add = () => ({ type: 'ADD' })
+const remove = () => ({ type: 'REMOVE' })
+
+// reducer
+
+const initialState = { sum : 0 }
+export const reducer = (state = initialState, action) {
+  switch(action.type) {
+    case 'ADD':
+      return {
+        ...state,
+        sum: state.sum + 1
+      }
+    case 'REMOVE':
+      return {
+        ...state,
+        sum: state.sum + 1
+      }
+    default:
+      return state;
+  }
+}
+
+// React component
+import * as actions from './actions';
+import { connect } from 'react-redux';
+
+const Counter = (props) => {
+  return (
+    <div>
+      Sum: {this.props.sum}
+      <button onClick={this.props.actions.add}>Add</button>
+      <button onClick={this.props.actions.remove}>Remove</button>
+    </div>
+  )
+}
+
+const mapStateToProps = (state) => ({
+  sum: state.sum
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  actions
+})
+
+const connectedCounter = connect(mapStateToProps, mapDispatchToProps)(Counter)
+export default Counter
