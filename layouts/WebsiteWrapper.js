@@ -20,10 +20,6 @@ class WebsiteWrapper extends React.Component {
     }, 750);
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('click', this.toggleFilter)
-  }
-
   handleInput = e => {
     const showNotification = e.target.value.indexOf('τα') !== -1
     this.setState({
