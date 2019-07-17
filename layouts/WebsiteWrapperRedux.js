@@ -167,23 +167,23 @@ class WebsiteWrapperRedux extends Component {
 
           {
             this.state.inputValue.length !== 0 &&
-            <img id="searchState" src="../userTypingAction.png" />
+            <img id="searchState" src={require('../userTypingAction.png')} />
           }
           {
             this.state.showNotification &&
             <img
               id="notification"
-              src="../notification.svg"
+              src={require('../notification.svg')}
               onClick={this.toggleNotification}
             />
           }
           {
             this.state.showNotification &&
-            <img id="headerState" src="../headerAction.png" />
+            <img id="headerState" src={require('../headerAction.png')} />
           }
           {
             this.state.openNotification &&
-            <img id="notificationState" src="../notificationAction.png" />
+            <img id="notificationState" src={require('../notificationAction.png')} />
           }
           {
             this.state.openNotification &&
@@ -201,14 +201,14 @@ class WebsiteWrapperRedux extends Component {
           }
           {
             this.state.showModal &&
-            <img src="../modalAction.png" id="modalState" />
+            <img src={require('../modalAction.png')} id="modalState" />
           }
           {
             this.state.loading
-            ? <img src="../skroutz-dummy-background.svg" />
+            ? <img src={require('../skroutz-dummy-background.svg')} />
             : this.state.checked
-              ? <img src="../skroutz-dummy.svg" />
-              : <img src="../skroutz-dummy-2.svg" />
+              ? <img src={require('../skroutz-dummy.svg')} />
+              : <img src={require('../skroutz-dummy-2.svg')} />
           }
         </SiteWrapper>
         <MirrorWrapper>

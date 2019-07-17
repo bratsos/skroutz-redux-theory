@@ -42,23 +42,23 @@ class WebsiteWrapper extends React.Component {
 
         {
           this.state.inputValue.length !== 0 &&
-          <img id="searchState" src="../searchState.png" />
+          <img id="searchState" src={require("../searchState.png")} />
         }
         {
           this.state.showNotification &&
           <img
             id="notification"
-            src="../notification.svg"
+            src={require("../notification.svg")}
             onClick={() => this.setState((p) => ({openNotification: !p.openNotification }))}
           />
         }
         {
           this.state.showNotification &&
-          <img id="headerState" src="../headerState.png" />
+          <img id="headerState" src={require("../headerState.png")} />
         }
         {
           this.state.openNotification &&
-          <img id="notificationState" src="../notificationState.png" />
+          <img id="notificationState" src={require("../notificationState.png")} />
         }
         {
           this.state.openNotification &&
@@ -76,14 +76,14 @@ class WebsiteWrapper extends React.Component {
         }
         {
           this.state.showModal &&
-          <img src="../modalState.png" id="modalState" />
+          <img src={require("../modalState.png")} id="modalState" />
         }
         {
           this.state.loading
-          ? <img src="../skroutz-dummy-background.svg" />
+          ? <img src={require("../skroutz-dummy-background.svg" )}/>
           : this.state.checked
-            ? <img src="../skroutz-dummy.svg" />
-            : <img src="../skroutz-dummy-2.svg" />
+            ? <img src={require("../skroutz-dummy.svg")} />
+            : <img src={require("../skroutz-dummy-2.svg")} />
         }
       </Wrapper>
     )

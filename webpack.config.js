@@ -3,8 +3,15 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [{loader: 'style-loader'}, {loader: 'css-loader'}],
       },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [{
+            loader: 'file-loader',
+            options: {}
+        }]
+    }
     ],
   },
-};
+}
