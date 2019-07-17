@@ -5,7 +5,7 @@ import WebsiteWrapperRedux from './WebsiteWrapperRedux';
 
 export const FirstSlide = ({ children }) => (
   <TitleWithShadow>
-    <img src="../first-slide-svg.svg" />
+    <img src={require("../first-slide-svg.svg")} />
     {children}
   </TitleWithShadow>
 )
